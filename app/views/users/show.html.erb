@@ -7,7 +7,8 @@
       </h2>
       <table class="table">
         <tbody>
-         <% @prototypes.each do |prototype| %>
+      <% @prototypes.each do |prototype| %>
+         
           <tr>
             <th class="table__col1">名前</th>
             <td class="table__col2"><%= prototype.user.name %></td>
@@ -32,6 +33,8 @@
       </h2>
       <div class="user__card">
         <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+
+
       </div>
     </div>
   </div>
