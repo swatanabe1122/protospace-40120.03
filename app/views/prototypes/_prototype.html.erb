@@ -1,0 +1,30 @@
+<div class="card">
+   <%#<%= link_to image_tag prototype.image,   if prototype.image.attached? class: :card__img , root_path%>
+
+<%= link_to prototype_path(prototype) do %>
+  <% if prototype.image.attached? %>
+    <%= image_tag prototype.image, class: :card__img %>
+  <% end %>
+<% end %>
+
+
+    <%#<%= prototype.image %>
+   <%#<%= image_tag prototype.image, class: 'prototype-image' if prototype.image.attached? %>
+
+
+
+
+  <div class="card__body">
+   <%= link_to "プロトタイプのタイトル", prototype_path(prototype), class: :card__title %>
+    <%#= prototype.title %>
+
+    <p class="card__summary">
+      <%= "プロトタイプのキャッチコピー" %>
+    </p>
+    
+  <%= link_to "by プロトタイプの投稿者名", user_path(prototype.user), class: :card__user %>
+
+
+
+  </div>
+</div>
