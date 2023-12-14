@@ -8,7 +8,8 @@ development:
   username: root
   password:
   host: localhost
-  database: database: protospace-40120.03_development
+  database: protospace-40120.03_development
+
 test:
   <<: *default
   adapter: mysql2
