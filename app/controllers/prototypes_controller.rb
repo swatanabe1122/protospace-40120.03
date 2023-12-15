@@ -14,7 +14,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    if Prototype.create(prototype_params)
+     Prototype.create(prototype_params)
     #保存されたときはルートパスに戻る
     if @prototype.save
       redirect_to root_path
