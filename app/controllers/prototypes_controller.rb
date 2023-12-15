@@ -14,9 +14,10 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    #保存されたときはルートパスに戻る
     if Prototype.create(prototype_params)
-     redirect_to '/'
+    #保存されたときはルートパスに戻る
+    if @prototype.save
+      redirect_to root_path
     #データが保存されなかったときは新規投稿ページへ戻る
     else
     render :new, status: :unprocessable_entity
@@ -26,7 +27,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype = Prototype.find(params[:id])
     @comment = Comment.new
-    #@prototype = Prototype.find(params[:id])追加してます。
+   
     @prototype = Prototype.find(params[:id])
     @comments = @prototype.comments.includes(:user)
   end
@@ -68,5 +69,4 @@ class PrototypesController < ApplicationController
       redirect_to action: :index
     end
   end
-  
 end
