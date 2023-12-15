@@ -8,7 +8,7 @@
         <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user), class: :prototype__user %>  
 
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @prototype.user_id %>
+      <% if current_user == @prototype.user%>
 
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path, class: :prototype__btn %>
@@ -20,10 +20,7 @@
       <div class="prototype__image">
         <%#<%= image_tag "プロトタイプの画像" %> 
 
-          <% if @prototype.image.present? %>
            <%= image_tag @prototype.image, class: 'prototype-image' %>
-          <% else %>
-            <% end %>
 
       </div>
       <div class="prototype__body">
