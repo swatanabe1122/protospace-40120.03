@@ -33,15 +33,12 @@ class PrototypesController < ApplicationController
   end
 
  def edit
-  @prototype = Prototype.find(params[:id])
  end
 #更新されたときはそのプロトタイプの詳細ページに戻る
  def update
   
-   if prototype = Prototype.find(params[:id])
-    prototype.update(prototype_params)
-    redirect_to prototype_path
-   
+  if @prototype.update(prototype_params)
+    redirect_to prototype_path(@prototype)
    #データが更新されなかったときは、編集ページに戻るようにrenderを用いて記述
   else
     render :edit, status: :unprocessable_entity
